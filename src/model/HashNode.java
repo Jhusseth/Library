@@ -1,4 +1,4 @@
-package tablaHash;
+package model;
 
 public class HashNode<K,V> {
 	
