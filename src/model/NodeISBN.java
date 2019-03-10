@@ -11,7 +11,7 @@ public class NodeISBN<E> {
         this.next = null;
     }
     
-    public E getValor() {
+    public E getValue() {
         return value;
     }
 
