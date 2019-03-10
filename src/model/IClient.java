@@ -1,6 +1,6 @@
-package cola;
+package model;
 
-public interface IQueue<T> {
+public interface IClient<T> {
 	
 	public int longitude();
 	public boolean isEmpty();

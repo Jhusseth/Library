@@ -1,12 +1,12 @@
-package cola;
+package model;
 
-public class Node {
+public class NodeClient {
 	
 	private int dato;
-	private Node next;
+	private NodeClient next;
 	
 
-	public Node(int  dato) {
+	public NodeClient(int  dato) {
 		this.dato=dato;
 		next=null;
 	}
@@ -22,12 +22,12 @@ public class Node {
 	}
 
 
-	public Node getNext() {
+	public NodeClient getNext() {
 		return next;
 	}
 
 
-	public void setNext(Node next) {
+	public void setNext(NodeClient next) {
 		this.next = next;
 	}
 
