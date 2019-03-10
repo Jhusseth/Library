@@ -3,11 +3,11 @@ package model;
 public class Catalogue<K,V> {
 	
 	
-	private HashNode<K,V>[] nodes;
+	private NodeCatalogue<K,V>[] nodes;
 
     @SuppressWarnings("unchecked")
     public Catalogue(int size){
-        nodes = new HashNode[size];
+        nodes = new NodeCatalogue[size];
     }
 
     private int getIndex(K key){
@@ -22,7 +22,7 @@ public class Catalogue<K,V> {
         int hash = getIndex(key);
 
         // Lets check if same key already exists and if so lets update it with the new value
-        for(HashNode<K,V> node = nodes[hash]; node != null; node = node.next){
+        for(NodeCatalogue<K,V> node = nodes[hash]; node != null; node = node.next){
             if((hash == node.hash) && key.equals(node.key)){
                 V oldData = node.data;
                 node.data = data;
@@ -31,7 +31,7 @@ public class Catalogue<K,V> {
         }
 
         // Lets add the new hash node created below to the start of linked list at nodes[hash] position
-        HashNode<K,V> node = new HashNode<K,V>(key, data, nodes[hash], hash);
+        NodeCatalogue<K,V> node = new NodeCatalogue<K,V>(key, data, nodes[hash], hash);
         nodes[hash] = node;
 
         return null;
@@ -40,8 +40,8 @@ public class Catalogue<K,V> {
     
     public boolean remove(K key){
         int hash = getIndex(key);
-        HashNode<K,V> previous = null;
-        for(HashNode<K,V> node = nodes[hash]; node != null; node = node.next){
+        NodeCatalogue<K,V> previous = null;
+        for(NodeCatalogue<K,V> node = nodes[hash]; node != null; node = node.next){
             if((hash == node.hash) && key.equals(node.key)){
                 if(previous != null){
                     previous.next = node.next;
@@ -58,7 +58,7 @@ public class Catalogue<K,V> {
     public V get(K key){
         int hash = getIndex(key);
 
-        for(HashNode<K,V> node = nodes[hash]; node != null; node = node.next){
+        for(NodeCatalogue<K,V> node = nodes[hash]; node != null; node = node.next){
             if(key.equals(node.key))
                 return node.data;
         }
@@ -67,7 +67,7 @@ public class Catalogue<K,V> {
     
     public void resize(int size){
     	Catalogue<K, V> newtbl = new Catalogue<K, V>(size);
-        for(HashNode<K,V> node : nodes){
+        for(NodeCatalogue<K,V> node : nodes){
             for(; node != null; node = node.next){
                 newtbl.insert(node.key, node.data);
                 remove(node.key);
@@ -76,11 +76,11 @@ public class Catalogue<K,V> {
         nodes = newtbl.nodes;
     }
 
-	public HashNode<K, V>[] getNodes() {
+	public NodeCatalogue<K, V>[] getNodes() {
 		return nodes;
 	}
 
-	public void setNodes(HashNode<K, V>[] nodes) {
+	public void setNodes(NodeCatalogue<K, V>[] nodes) {
 		this.nodes = nodes;
 	}
     

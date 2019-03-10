@@ -1,13 +1,13 @@
 package model;
 
-public class HashNode<K,V> {
+public class NodeCatalogue<K,V> {
 	
         final K key;
         V data;
-        HashNode<K,V> next;
+        NodeCatalogue<K,V> next;
         final int hash;
 
-        public HashNode(K k, V v, HashNode<K,V> n, int h){
+        public NodeCatalogue(K k, V v, NodeCatalogue<K,V> n, int h){
             key = k;
             data = v;
             next = n;
@@ -22,11 +22,11 @@ public class HashNode<K,V> {
 			this.data = data;
 		}
 
-		public HashNode<K, V> getNext() {
+		public NodeCatalogue<K, V> getNext() {
 			return next;
 		}
 
-		public void setNext(HashNode<K, V> next) {
+		public void setNext(NodeCatalogue<K, V> next) {
 			this.next = next;
 		}
 
