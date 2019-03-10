@@ -1,6 +1,6 @@
-package pilas;
+package model;
 
-public interface IStack<T> {
+public interface IBook<T> {
 
 	public void apilar (T element);
 	public T desapilar();

@@ -1,19 +1,19 @@
-package pilas;
+package model;
 
-public class Node {
+public class NodeBooks {
 
-	private Node siguiente;
+	private NodeBooks siguiente;
 	private int elemento;
 	
-	public Node(int e){
+	public NodeBooks(int e){
 		siguiente =null;
 		elemento=e;
 	}
 	
-	public Node getSiguiente() {
+	public NodeBooks getSiguiente() {
 		return siguiente;
 	}
-	public void setSiguiente(Node siguiente) {
+	public void setSiguiente(NodeBooks siguiente) {
 		this.siguiente = siguiente;
 	}
 	public int getElemnto() {

@@ -1,19 +1,19 @@
-package pilas;
+package model;
 
-public class Stack implements IStack<Node> {
+public class Books implements IBook<NodeBooks> {
 
-	private Node primero;
+	private NodeBooks primero;
 	private int tam;
 
-	public Stack(){
+	public Books(){
 		setPrimero(null);
 		tam=0;
 	}
 	
 	
 	@Override
-	public void apilar(Node element) {
-		Node n = element;
+	public void apilar(NodeBooks element) {
+		NodeBooks n = element;
 		if(estaVacia()) {
 			primero=n;
 		}
@@ -27,11 +27,11 @@ public class Stack implements IStack<Node> {
 	}
 
 	@Override
-	public Node desapilar() {
+	public NodeBooks desapilar() {
 		if(primero==null){
 			return null;
 		}
-		Node ax = primero;
+		NodeBooks ax = primero;
 		primero = primero.getSiguiente();
 		tam--;
 
@@ -39,8 +39,8 @@ public class Stack implements IStack<Node> {
 	}
 
 	@Override
-	public Node buscar(int text) {
-		Node p = null;
+	public NodeBooks buscar(int text) {
+		NodeBooks p = null;
 		if(primero.getElemnto()==text) {
 			p=primero;
 		}
@@ -66,11 +66,11 @@ public class Stack implements IStack<Node> {
 }
 
 	@Override
-	public Node getPrimero() {
+	public NodeBooks getPrimero() {
 		return primero;
 	}
 
-	public void setPrimero(Node primero) {
+	public void setPrimero(NodeBooks primero) {
 		this.primero = primero;
 	}
 	
@@ -89,7 +89,7 @@ public class Stack implements IStack<Node> {
 	@Override
 	public boolean remover(int o) {
 		boolean e =false;
-		Node p = null;
+		NodeBooks p = null;
 		if(primero.getElemnto()==o) {
 			p=primero;
 		}
