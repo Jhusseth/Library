@@ -48,15 +48,14 @@ public class Cajero {
             return min;
         }
 
-        // remove the last item ,and set it as new root
+        
         int min = list.get(0);
         int lastItem = list.remove(list.size() - 1);
         list.set(0, lastItem);
 
-        // bubble-down until heap property is maintained
         minHeapify(0);
 
-        // return min key
+        
         return min;
     }
 
@@ -70,7 +69,7 @@ public class Cajero {
         list.set(i, key);
         int parent = parent(i);
 
-        // bubble-up until heap property is maintained
+        
         while (i > 0 && list.get(parent) > list.get(i)) {
 
             swap(i, parent);
@@ -85,7 +84,6 @@ public class Cajero {
         int right = right(i);
         int smallest = -1;
 
-        // find the smallest key between current node and its children.
         if (left <= list.size() - 1 && list.get(left) < list.get(i)) {
             smallest = left;
         } else {
@@ -96,7 +94,6 @@ public class Cajero {
             smallest = right;
         }
 
-        // if the smallest key is not the current key then bubble-down it.
         if (smallest != i) {
 
             swap(i, smallest);
