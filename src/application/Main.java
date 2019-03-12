@@ -14,6 +14,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("libraryCaliMain.fxml"));
 			Scene scene = new Scene(root,600,514);
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("                                                                    ===== Library_Cali =====");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
