@@ -2,13 +2,12 @@ package model;
 
 public class Client implements IClient<NodeClient> {
 
-	private NodeClient first;
-	private NodeClient end;
+	private NodeClient cola;
+	
 	private int size;
 	
 	public Client() {
-		first = null;
-		end = null;
+		cola = null;
 		size=0;
 	}
 
@@ -32,50 +31,47 @@ public class Client implements IClient<NodeClient> {
 	}
 
 	@Override
-	public void enQueue(NodeClient o) {
-		NodeClient n= o;
-		if(first==null){
-			first =n;
-			end=n;
-		}
-		else{
-			end.setNext(n);
-			end=n;
+	public void enQueue(NodeClient o, long priority) {
+		NodeClient newC = null;
+		
+		boolean found =false;
+		while((newC!=null)&&!found){
+			if(cola.getPriority()<priority){
+				found=true;
+			}
+			else{
+				newC=cola.getNext();
+			}
 		}
 	}
 
 	@Override
 	public NodeClient deQueue() {
-		if(first ==null){
+		if(cola == null){
 			return null;
 		}
-		NodeClient ax = first;
-		first = first.getNext();
+		NodeClient ax = cola;
+		cola = cola.getNext();
 		size--;
 		return ax;
 	}
 
 	@Override
 	public NodeClient getFirst() {
-		return first;
+		return cola;
 	}
 
 	@Override
-	public NodeClient getEnd() {
-		return end;
-	}
-
-	@Override
-	public NodeClient search(int o) {
+	public NodeClient search(NodeClient o) {
 		NodeClient p = null;
-		if(first.getDato()==o) {
-			p=first;
+		if(cola.getDato()==o) {
+			p=cola;
 		}
 		else {
-			while(first.getNext()!=null) {
-				first=first.getNext();
-			if(first.getDato()==o) {
-				p=first;
+			while(cola.getNext()!=null) {
+				cola=cola.getNext();
+			if(cola.getDato()==o) {
+				p=cola;
 			}
 			}
 		}
@@ -84,25 +80,22 @@ public class Client implements IClient<NodeClient> {
 	}
 
 	public void setFirst(NodeClient first) {
-		this.first = first;
+		this.cola = first;
 	}
 
-	public void setEnd(NodeClient end) {
-		this.end = end;
-	}
 
 	@Override
-	public boolean remove(int o) {
+	public boolean remove(NodeClient o) {
 		boolean e =false;
 		NodeClient p = null;
-		if(first.getDato()==o) {
-			p=first;
+		if(cola.getDato()==o) {
+			p=cola;
 		}
 		else {
-			while(first.getNext()!=null) {
-				first=first.getNext();
-			if(first.getDato()==o) {
-				p=first;
+			while(cola.getNext()!=null) {
+				cola=cola.getNext();
+			if(cola.getDato()==o) {
+				p=cola;
 			}
 			}
 			size--;

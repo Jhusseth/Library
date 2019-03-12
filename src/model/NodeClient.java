@@ -1,24 +1,34 @@
 package model;
 
-public class NodeClient {
+public class NodeClient<T> {
 	
-	private int dato;
+	private T dato;
+	private long priority;
 	private NodeClient next;
 	
 
-	public NodeClient(int  dato) {
+	public NodeClient(T  dato,long priority) {
 		this.dato=dato;
+		this.priority=priority;
 		next=null;
 	}
 
 
-	public int getDato() {
+	public T getDato() {
 		return dato;
 	}
 
 
-	public void setDato(int dato) {
+	public void setDato(T dato) {
 		this.dato = dato;
+	}
+	
+	public long getPriority() {
+		return priority;
+	}
+
+	public void setPriority(long priority) {
+		this.priority = priority;
 	}
 
 
