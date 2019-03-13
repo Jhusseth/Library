@@ -21,7 +21,6 @@ public class Catalogue<K,V> {
     public V insert(K key, V data){
         int hash = getIndex(key);
 
-        // Lets check if same key already exists and if so lets update it with the new value
         for(NodeCatalogue<K,V> node = nodes[hash]; node != null; node = node.next){
             if((hash == node.hash) && key.equals(node.key)){
                 V oldData = node.data;
@@ -30,7 +29,7 @@ public class Catalogue<K,V> {
             }
         }
 
-        // Lets add the new hash node created below to the start of linked list at nodes[hash] position
+
         NodeCatalogue<K,V> node = new NodeCatalogue<K,V>(key, data, nodes[hash], hash);
         nodes[hash] = node;
 
