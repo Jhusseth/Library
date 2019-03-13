@@ -2,7 +2,7 @@ package model;
 
 public class Books implements IBook<NodeBooks> {
 
-	private NodeBooks primero;
+	private NodeBooks firts;
 	private int tam;
 	private String name;
 	private double value;
@@ -39,11 +39,11 @@ public class Books implements IBook<NodeBooks> {
 	public void apilar(NodeBooks element) {
 		NodeBooks n = element;
 		if(estaVacia()) {
-			primero=n;
+			firts=n;
 		}
 		else {
-			n.setSiguiente(primero);
-			primero=n;
+			n.setSiguiente(firts);
+			firts=n;
 		}
 		
 
@@ -52,11 +52,11 @@ public class Books implements IBook<NodeBooks> {
 
 	@Override
 	public NodeBooks desapilar() {
-		if(primero==null){
+		if(firts==null){
 			return null;
 		}
-		NodeBooks ax = primero;
-		primero = primero.getSiguiente();
+		NodeBooks ax = firts;
+		firts = firts.getSiguiente();
 		tam--;
 
 		return ax;
@@ -65,14 +65,14 @@ public class Books implements IBook<NodeBooks> {
 	@Override
 	public NodeBooks buscar(int text) {
 		NodeBooks p = null;
-		if(primero.getElemnto()==text) {
-			p=primero;
+		if(firts.getElemnto()==text) {
+			p=firts;
 		}
 		else {
-			while(primero.getSiguiente()!=null) {
-			primero=primero.getSiguiente();
-			if(primero.getElemnto()==text) {
-				p=primero;
+			while(firts.getSiguiente()!=null) {
+			firts=firts.getSiguiente();
+			if(firts.getElemnto()==text) {
+				p=firts;
 			}
 			}
 		}
@@ -83,7 +83,7 @@ public class Books implements IBook<NodeBooks> {
 	@Override
 	public boolean estaVacia() {
 		boolean empty = false;
-		if(primero==null) {
+		if(firts==null) {
 			empty=true;
 		}
 		return empty;
@@ -91,11 +91,11 @@ public class Books implements IBook<NodeBooks> {
 
 	@Override
 	public NodeBooks getPrimero() {
-		return primero;
+		return firts;
 	}
 
 	public void setPrimero(NodeBooks primero) {
-		this.primero = primero;
+		this.firts = primero;
 	}
 	
 	@Override
@@ -114,14 +114,14 @@ public class Books implements IBook<NodeBooks> {
 	public boolean remover(int o) {
 		boolean e =false;
 		NodeBooks p = null;
-		if(primero.getElemnto()==o) {
-			p=primero;
+		if(firts.getElemnto()==o) {
+			p=firts;
 		}
 		else {
-			while(primero.getSiguiente()!=null) {
-			primero=primero.getSiguiente();
-			if(primero.getElemnto()==o) {
-				p=primero;
+			while(firts.getSiguiente()!=null) {
+			firts=firts.getSiguiente();
+			if(firts.getElemnto()==o) {
+				p=firts;
 			}
 			}
 			tam--;

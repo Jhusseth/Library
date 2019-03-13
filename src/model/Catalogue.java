@@ -4,6 +4,7 @@ public class Catalogue<K,V> {
 	
 	
 	private NodeCatalogue<K,V>[] nodes;
+
 	private char stads;
 
     @SuppressWarnings("unchecked")
