@@ -1,11 +1,11 @@
 package model;
 
-public class NodeBooks {
+public class NodeBooks<T> {
 
 	private NodeBooks siguiente;
-	private int elemento;
+	private  T elemento;
 	
-	public NodeBooks(int e){
+	public NodeBooks(T e){
 		siguiente =null;
 		elemento=e;
 	}
@@ -16,10 +16,10 @@ public class NodeBooks {
 	public void setSiguiente(NodeBooks siguiente) {
 		this.siguiente = siguiente;
 	}
-	public int getElemnto() {
+	public T getElemnto() {
 		return elemento;
 	}
-	public void setElemnto(int elemento) {
+	public void setElemnto(T elemento) {
 		this.elemento = elemento;
 	}
 	

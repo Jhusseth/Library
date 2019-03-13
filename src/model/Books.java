@@ -36,9 +36,9 @@ public class Books implements IBook<NodeBooks> {
 	
 	
 	@Override
-	public void apilar(NodeBooks element) {
+	public void push(NodeBooks element) {
 		NodeBooks n = element;
-		if(estaVacia()) {
+		if(isEmpty()) {
 			firts=n;
 		}
 		else {
@@ -51,7 +51,7 @@ public class Books implements IBook<NodeBooks> {
 	}
 
 	@Override
-	public NodeBooks desapilar() {
+	public NodeBooks pop() {
 		if(firts==null){
 			return null;
 		}
@@ -63,7 +63,7 @@ public class Books implements IBook<NodeBooks> {
 	}
 
 	@Override
-	public NodeBooks buscar(int text) {
+	public NodeBooks search(NodeBooks text) {
 		NodeBooks p = null;
 		if(firts.getElemnto()==text) {
 			p=firts;
@@ -81,7 +81,7 @@ public class Books implements IBook<NodeBooks> {
 	}
 
 	@Override
-	public boolean estaVacia() {
+	public boolean isEmpty() {
 		boolean empty = false;
 		if(firts==null) {
 			empty=true;
@@ -90,7 +90,7 @@ public class Books implements IBook<NodeBooks> {
 }
 
 	@Override
-	public NodeBooks getPrimero() {
+	public NodeBooks getFirts() {
 		return firts;
 	}
 
@@ -99,7 +99,7 @@ public class Books implements IBook<NodeBooks> {
 	}
 	
 	@Override
-	public int longitud() {
+	public int longitude() {
 		
 		int cant =0;
 		for(int i=0;i<tam;i++) {
@@ -111,7 +111,7 @@ public class Books implements IBook<NodeBooks> {
 	}
 	
 	@Override
-	public boolean remover(int o) {
+	public boolean remove(NodeBooks o) {
 		boolean e =false;
 		NodeBooks p = null;
 		if(firts.getElemnto()==o) {
