@@ -3,13 +3,28 @@ package model;
 public class Client implements IClient<NodeClient> {
 
 	private NodeClient cola;
-	
+	private int code;
 	private int size;
 	
-	public Client() {
+	public Client(int code) {
 		cola = null;
 		size=0;
+		this.code = code;
 	}
+	
+	
+
+	public int getCode() {
+		return code;
+	}
+
+
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+
 
 	@Override
 	public int longitude() {

@@ -4,10 +4,34 @@ public class Books implements IBook<NodeBooks> {
 
 	private NodeBooks primero;
 	private int tam;
+	private String name;
+	private double value;
 
-	public Books(){
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public double getValue() {
+		return value;
+	}
+
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+
+	public Books(String name, double value){
 		setPrimero(null);
 		tam=0;
+		this.name = name;
+		this.value= value;
 	}
 	
 	

@@ -4,16 +4,12 @@ public class Catalogue<K,V> {
 	
 	
 	private NodeCatalogue<K,V>[] nodes;
-	private ISBN isbn;
+	private char stads;
 
     @SuppressWarnings("unchecked")
-    public Catalogue(int size){
+    public Catalogue(int size,char stands){
         nodes = new NodeCatalogue[size];
-        isbn = null;
-    }
-    
-    public ISBN getISBN(){
-    	return isbn;
+        this.stads=stands;
     }
 
     private int getIndex(K key){
@@ -70,8 +66,8 @@ public class Catalogue<K,V> {
         return null;
     }
     
-    public void resize(int size){
-    	Catalogue<K, V> newtbl = new Catalogue<K, V>(size);
+    public void resize(int size,char stands){
+    	Catalogue<K, V> newtbl = new Catalogue<K, V>(size, stands);
         for(NodeCatalogue<K,V> node : nodes){
             for(; node != null; node = node.next){
                 newtbl.insert(node.key, node.data);
@@ -80,6 +76,14 @@ public class Catalogue<K,V> {
         }
         nodes = newtbl.nodes;
     }
+
+	public char getStads() {
+		return stads;
+	}
+
+	public void setStads(char stads) {
+		this.stads = stads;
+	}
 
 	public NodeCatalogue<K, V>[] getNodes() {
 		return nodes;
