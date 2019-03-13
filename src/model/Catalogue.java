@@ -4,10 +4,16 @@ public class Catalogue<K,V> {
 	
 	
 	private NodeCatalogue<K,V>[] nodes;
+	private ISBN isbn;
 
     @SuppressWarnings("unchecked")
     public Catalogue(int size){
         nodes = new NodeCatalogue[size];
+        isbn = null;
+    }
+    
+    public ISBN getISBN(){
+    	return isbn;
     }
 
     private int getIndex(K key){

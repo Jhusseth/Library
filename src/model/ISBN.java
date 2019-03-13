@@ -4,11 +4,18 @@ public class ISBN<V,E> implements InISBN<V,E> {
 	
     private NodeISBN<E> start;
     
+    private Books books;
+    
     private int tam;
    
     public ISBN(){
         start = null;
         tam = 0;
+        books =null;
+    }
+    
+    public Books getBooks(){
+    	return books;
     }
     
     @Override
