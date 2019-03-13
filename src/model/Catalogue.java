@@ -8,7 +8,7 @@ public class Catalogue<K,V> {
 	private char stads;
 
     @SuppressWarnings("unchecked")
-    public Catalogue(int size,char stands){
+    public Catalogue(char stands,int size){
         nodes = new NodeCatalogue[size];
         this.stads=stands;
     }
@@ -68,7 +68,7 @@ public class Catalogue<K,V> {
     }
     
     public void resize(int size,char stands){
-    	Catalogue<K, V> newtbl = new Catalogue<K, V>(size, stands);
+    	Catalogue<K, V> newtbl = new Catalogue<K, V>(stands,size);
         for(NodeCatalogue<K,V> node : nodes){
             for(; node != null; node = node.next){
                 newtbl.insert(node.key, node.data);
