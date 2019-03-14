@@ -1,6 +1,6 @@
 package PriorityQueue;
 
-import node.iNode;
+import Node.iNode;
 
 public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 

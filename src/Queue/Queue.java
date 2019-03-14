@@ -1,6 +1,6 @@
 package Queue;
 
-import node.iNode;
+import Node.iNode;
 
 public class Queue<T> implements IQueue<iNode<T>>{
 	

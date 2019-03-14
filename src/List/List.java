@@ -1,6 +1,6 @@
-package lista;
-import node.Node;
-import node.iNode;
+package List;
+import Node.Node;
+import Node.iNode;
 
 public class List<T> implements IList<iNode<T>> {
 	

@@ -1,4 +1,4 @@
-package lista;
+package List;
 
 public interface IList<T> {
 	
