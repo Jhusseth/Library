@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.EmptyStackException;
-import java.util.Stack;
+import Stack.Stack;
 
 import org.junit.jupiter.api.Test;
 
