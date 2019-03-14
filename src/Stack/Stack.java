@@ -6,22 +6,12 @@ public class Stack<T> implements IStack<iNode<T>> {
 
 	private iNode<T> first;
 	private int tam;
-	private double value;
-
-	public double getValue() {
-		return value;
-	}
 
 
-	public void setValue(double value) {
-		this.value = value;
-	}
 
-
-	public  Stack(double value){
+	public  Stack(){
 		first = null;
 		tam=0;
-		this.value= value;
 	}
 	
 
