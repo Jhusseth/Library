@@ -1,11 +1,11 @@
 package model;
 import java.util.ArrayList;
 
-public class Recorder {
+public class Cashier {
 
     private ArrayList<Integer> list;
 
-    public Recorder() {
+    public Cashier() {
     	this.list = new ArrayList<Integer>();
     }
 

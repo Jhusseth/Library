@@ -2,14 +2,14 @@ package PriorityQueue;
 
 import node.iNode;
 
-public class Queue<T> implements IPriority_Queue<iNode<T>> {
+public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 
 	private iNode<T> queue;
 	private int code;
 	private int size;
 	private int priority;
 	
-	public Queue(int code) {
+	public QueuePriority(int code) {
 		queue = null;
 		size=0;
 		this.code = code;
