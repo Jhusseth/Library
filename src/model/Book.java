@@ -4,10 +4,12 @@ public class Book {
 	
 	private int value;
 	private int cant;
+	private int isbn;
 
-	public Book(int value,int cant) {
-		this.value = value;
-		this.cant=cant;
+	public Book(int isbn) {
+		this.value =0;
+		this.cant=0;
+		this.isbn = isbn;
 	}
 
 	public int getValue() {

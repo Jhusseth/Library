@@ -59,17 +59,20 @@ public class Library {
 			
 			List<Stand> listS = new List<Stand>();
 			
+			PriorityQueue<Client> qP = new PriorityQueue<>();
+			
 			for(int i =0;i<cases;i++){
 				int cashier = Integer.parseInt(br.readLine());
 				int stands = Integer.parseInt(br.readLine());
 				Queue<Book> queue = new Queue<Book>();
-				for(int j =0;i<stands;j++){	
+				for(int j =0;j<stands;j++){	
 					String[] hashT = br.readLine().split(" ");		
 					char referent = hashT[0].charAt(0);	
 					int size = Integer.parseInt(hashT[1]);
 					
 					Stand aux = new Stand(referent,size);
-					listS.add((iNode<Stand>) aux);
+					Node<Stand> as = new Node<Stand>(aux);
+					listS.add(as);
 					
 					ISBN cb = new ISBN(0);
 					for(int k =0;k<size;k++){			
@@ -79,8 +82,12 @@ public class Library {
 						int value = Integer.parseInt(books[1]);		
 						int cant = Integer.parseInt(books[2]);
 						
-						Book b = new Book(value,cant);
-						queue.enQueue((iNode<Book>) b);
+						Book b = new Book(nIsbn);
+						b.setCant(cant);
+						b.setValue(value);
+						Node<Book> bs = new Node<Book>(b);
+						
+						queue.enQueue(bs);
 					}
 					
 					aux.getHastable().put(cb, queue);
@@ -93,16 +100,19 @@ public class Library {
 					
 					Client c = new Client(code);
 					
-					QueuePriority<Client> queueP = new QueuePriority<>();
-					
-					int time =0;
 					for(int x =1;x<client.length;x++){		
 						int isbn = Integer.parseInt(client[i]);
-						time++;
+						Book nb = new Book(isbn);
+						c.shop(nb);
 					}
-					Node<Client> cb = new Node<Client>(c);
-					queueP.enQueue(cb, time );
 					
+					qP.offer(c);
+					
+				}
+				
+				System.out.println("Clientes: ");
+				while(!qP.isEmpty()){
+					System.out.println(qP.poll().getIdClient());
 				}
 			}
 			br.close();
@@ -111,31 +121,6 @@ public class Library {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-	}
-	
-	
-	public void probar(){
-		
-		PriorityQueue<Client> qP = new PriorityQueue<>();
-		
-		Client cl = new Client(121);
-		Client cl1 = new Client(122);
-		Client cl2 = new Client(123);		
-		Client cl3 = new Client(124);
-		Client cl4 = new Client(125);
-		
-		
-		qP.offer(cl);
-		qP.offer(cl1);
-		qP.offer(cl2);
-		qP.offer(cl3);
-		qP.offer(cl4);
-	
-		System.out.println("Clientes: ");
-		while(!qP.isEmpty()){
-			System.out.println(qP.poll().getIdClient());
-		}
-		
 	}
 
 }
