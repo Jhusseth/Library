@@ -1,15 +1,13 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Queue;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 import java.util.LinkedList;
 
-import org.junit.jupiter.api.Test;
 
 class QueueTest {
 	
