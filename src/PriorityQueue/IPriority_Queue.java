@@ -1,6 +1,6 @@
-package model;
+package PriorityQueue;
 
-public interface IClient<T> {
+public interface IPriority_Queue<T> {
 	
 	public int longitude();
 	public boolean isEmpty();

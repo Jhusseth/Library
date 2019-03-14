@@ -1,6 +1,6 @@
-package model;
+package Stack;
 
-public interface IBook<T> {
+public interface IStack<T> {
 
 	public void push (T element);
 	public T pop();
