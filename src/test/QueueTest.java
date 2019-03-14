@@ -6,25 +6,26 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Queue;
+import QueueP.QueueEmptyException;
+import QueueP.QueueP;
 import java.util.LinkedList;
 
 import org.junit.jupiter.api.Test;
 
 class QueueTest {
 	
-	Queue<Integer> q1;
+	QueueP<Integer> q1;
 	
 	void setUp1() {
-		q1 = new LinkedList<>();
+		q1 = new QueueP<Integer>(0);
 	}
 
 	@Test
-	void Ordertest() {
+	void Ordertest() throws QueueEmptyException {
 		setUp1();
 		Integer[] numbers = StackTest.randomArray(5000, -500, 500);
 		for (Integer number : numbers) {
-			q1.add(number);
+			q1.offer(number);
 		}
 		for (int i = 0; i < numbers.length; i++) {
 			if (numbers[i] != q1.poll()) {
@@ -34,10 +35,10 @@ class QueueTest {
 	}
 	
 	@Test
-	void Empty() {
+	void Empty() throws QueueEmptyException {
 		setUp1();
 		int num = (int)(Math.random() * 25);
-		q1.add(num);
+		q1.offer(num);
 		assertFalse(q1.isEmpty());
 		assertEquals((int)q1.peek(), num);
 		assertFalse(q1.isEmpty());

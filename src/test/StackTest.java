@@ -4,25 +4,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import StackP.StackEmptyException;
+import StackP.StackP;
 
 import java.util.EmptyStackException;
-import java.util.Stack;
+import StackP.StackP;
 
-import org.junit.jupiter.api.Test;
+
 
 class StackTest {
 	
 	// Class under Test
-	Stack<Integer> stack;
-	Stack<Character> word;
+	StackP<Integer> stack;
+	StackP<Character> word;
 	
 	void setUp1() {
-		stack = new Stack<>();
+		stack = new StackP<>();
 	}
 	
 	void setUp2() {
-		word = new Stack<>();
+		word = new StackP<>();
 	}
 
 	@Test
@@ -33,14 +34,19 @@ class StackTest {
 			stack.push(number);
 		}
 		for(int i = vector.length-1; i >= 0; i--) {
-			if (vector[i] != stack.pop()) {
-				fail();
+			try {
+				if (vector[i] != stack.pop()) {
+					fail();
+				}
+			} catch (StackEmptyException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
 	
 	@Test
-	void emptyStackTest() {
+	void emptyStackTest() throws StackEmptyException {
 		Integer[] vector1 = randomArray(200, 0, 60000);
 		Integer[] vector2 = randomArray(300, 0, 60000);
 		setUp1();
@@ -63,7 +69,7 @@ class StackTest {
 	}
 	
 	@Test
-	void invertWordTest() {
+	void invertWordTest() throws StackEmptyException {
 		setUp2();
 		char[] word1 = "this is a word".toCharArray();
 		char[] inverseword = "drow a si siht".toCharArray();
@@ -77,17 +83,17 @@ class StackTest {
 		assertArrayEquals(inverseword, word2);
 	}
 	
-	void subEmpyTest(Integer[] vector) {
+	void subEmpyTest(Integer[] vector) throws StackEmptyException {
 		for (Integer number : vector) {
 			stack.push(number);
 		}
-		if (stack.isEmpty()) {
+		if (stack.empty()) {
 			fail();
 		}
 		for (int i = 0; i < vector.length; i++) {
 			stack.pop();
 		}
-		if (!stack.isEmpty()) {
+		if (!stack.empty()) {
 			fail();
 		}
 	}

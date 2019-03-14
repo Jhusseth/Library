@@ -6,17 +6,17 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Hashtable;
+import HashTable.HashTable;
 
 import org.junit.jupiter.api.Test;
 
 class HashTest {
 	
-	Hashtable<String, Integer> h1;
-	Hashtable<Integer, Integer> h2;
+	HashTable<String, Integer> h1;
+	HashTable<Integer, Integer> h2;
 	
 	void setUp1() {
-		h1 = new Hashtable<String, Integer>();
+		h1 = new HashTable<String, Integer>();
 		String keys[] = {"k1","k2","k3","k4","k2"};
 		Integer[] values = {1,2,3,4,5};
 		for (int i = 0; i < keys.length; i++) {
@@ -25,7 +25,7 @@ class HashTest {
 	}
 	
 	void setUp2() {
-		h2 = new Hashtable<>(1<<50);
+		h2 = new HashTable<>(1<<50);
 	}
 
 	@Test
