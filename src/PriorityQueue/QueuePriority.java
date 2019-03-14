@@ -37,15 +37,20 @@ public class QueuePriority<T> implements IPriority_Queue<Node<T>> {
 	public void enQueue(Node<T> o, long priority) {
 		Node<T> newC = null;
 		
-		boolean found =false;
-		while((newC!=null)&&!found){
+		newC = queue;
+		if(queue==null){
+			newC = queue;
+		}
+		while((newC!=null)){
 			if(getPriority()<priority){
-				found=true;
+				newC.setNext(queue);
+				queue = newC;
 			}
 			else{
-				newC=(Node<T>) queue.getNext();
+				queue =(Node<T>) queue.getNext();
 			}
 		}
+		size++;
 	}
 
 	public int getPriority() {
