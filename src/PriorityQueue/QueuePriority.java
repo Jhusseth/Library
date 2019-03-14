@@ -5,26 +5,14 @@ import Node.iNode;
 public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 
 	private iNode<T> queue;
-	private int code;
 	private int size;
 	private int priority;
 	
-	public QueuePriority(int code) {
+	public QueuePriority() {
 		queue = null;
 		size=0;
-		this.code = code;
 		this.priority=0;
 	}
-	
-	public int getCode() {
-		return code;
-	}
-
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-
 
 	@Override
 	public int longitude() {

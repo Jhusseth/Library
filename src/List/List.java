@@ -10,10 +10,9 @@ public class List<T> implements IList<iNode<T>> {
     
     private int code;
    
-    public List(int code){
+    public List(){
         first = null;
         tam = 0;
-        this.code = code;
     }
     
     @Override

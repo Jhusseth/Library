@@ -1,8 +1,7 @@
 package model;
 
-import java.util.Queue;
-
 import HashTable.HashTable;
+import Queue.Queue;
 
 public class Stand {
 	
@@ -13,9 +12,9 @@ public class Stand {
 		return referent;
 	}
 	
-	public Stand(char referent) {
+	public Stand(char referent, int size) {
 		this.referent = referent;
-		this.hashtable = null;
+		hashtable = new HashTable<Integer, Queue<Book>>(size) ;
 	}
 	public void setReferent(char referent) {
 		this.referent = referent;
