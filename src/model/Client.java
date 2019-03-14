@@ -5,11 +5,11 @@ import Stack.Stack;
 public class Client {
 	
 	private int idClient;
-	private Stack<Integer> stackBooks;
+	private Stack<ISBN> stackBooks;
 	
 	public Client(int idClient) {
 		this.idClient = idClient;
-		this.stackBooks = new Stack<Integer>();
+		this.stackBooks = new Stack<ISBN>();
 	}
 
 	public int getIdClient() {
@@ -20,12 +20,11 @@ public class Client {
 		this.idClient = idClient;
 	}
 
-	public Stack<Integer> getStacBooks() {
+	public Stack<ISBN> getStackBooks() {
 		return stackBooks;
 	}
 
-	public void setStacBooks(Stack<Integer> stacBooks) {
+	public void setStacBooks(Stack<ISBN> stacBooks) {
 		this.stackBooks = stacBooks;
 	}
-
 }

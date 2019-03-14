@@ -1,5 +1,4 @@
 package List;
-import Node.Node;
 import Node.iNode;
 
 public class List<T> implements IList<iNode<T>> {
@@ -20,7 +19,7 @@ public class List<T> implements IList<iNode<T>> {
         return first == null;
     }
     
-    public int getTamanio(){
+    public int getSize(){
         return tam;
     }
     

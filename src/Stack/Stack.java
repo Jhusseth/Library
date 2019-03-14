@@ -7,8 +7,6 @@ public class Stack<T> implements IStack<iNode<T>> {
 	private iNode<T> first;
 	private int tam;
 
-
-
 	public  Stack(){
 		first = null;
 		tam=0;

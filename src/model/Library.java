@@ -59,6 +59,7 @@ public class Library {
 			for(int i =0;i<cases;i++){
 				int cashier = Integer.parseInt(br.readLine());
 				int stands = Integer.parseInt(br.readLine());
+				Queue<Book> queue = new Queue<Book>();
 				for(int j =0;i<stands;j++){	
 					String[] hashT = br.readLine().split(" ");		
 					char referent = hashT[0].charAt(0);	
@@ -66,11 +67,12 @@ public class Library {
 					
 					Stand aux = new Stand(referent,size);
 					listS.add((iNode<Stand>) aux);
-					Queue<Book> queue = new Queue<Book>();
-					int ISBN =0;
+					
+					ISBN cb = new ISBN(0);
 					for(int k =0;k<size;k++){			
 						String[] books = br.readLine().split(" ");			
-						ISBN = Integer.parseInt(books[0]);		
+						int nIsbn = Integer.parseInt(books[0]);	
+						cb = new ISBN(nIsbn);
 						int value = Integer.parseInt(books[1]);		
 						int cant = Integer.parseInt(books[2]);
 						
@@ -78,27 +80,30 @@ public class Library {
 						queue.enQueue((iNode<Book>) b);
 					}
 					
-					aux.getHastable().put(ISBN, queue);
+					aux.getHastable().put(cb, queue);
 				}
 				
-//				int cClient = Integer.parseInt(br.readLine());
-//				for(int z =0;z<cClient;z++){	
-//					String[] client = br.readLine().split(" ");	
-//					int code = 	Integer.parseInt(client[0]);
-//					
-//					Client c = new Client(code);
-//					
-//					QueuePriority<Client> queueP = new QueuePriority<>();
-//					int time =0;
-//					for(int x =1;x<client.length;x++){		
-//						int isbn = Integer.parseInt(client[i]);
-//						time++;
-//					}
-//					queueP.enQueue((iNode<Client>) c, time );
-//					
-//					
-//					
-//				}
+				int cClient = Integer.parseInt(br.readLine());
+				for(int z =0;z<cClient;z++){	
+					String[] client = br.readLine().split(" ");	
+					int code = 	Integer.parseInt(client[0]);
+					
+					Client c = new Client(code);
+					
+					QueuePriority<Client> queueP = new QueuePriority<>();
+					
+					int time =0;
+					for(int x =1;x<client.length;x++){		
+						int isbn = Integer.parseInt(client[i]);
+						ISBN bI = new ISBN(isbn);
+						c.getStackBooks().push((iNode<ISBN>) bI);
+						time++;
+					}
+					queueP.enQueue((iNode<Client>) c, time );
+					
+					
+					
+				}
 			}
 			br.close();
 			bw.close();
