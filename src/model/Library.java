@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 import java.util.Arrays;
 
 import List.List;
+import Node.Node;
 import Node.iNode;
 import PriorityQueue.QueuePriority;
 import Queue.Queue;
@@ -99,9 +100,8 @@ public class Library {
 						c.getStackBooks().push((iNode<ISBN>) bI);
 						time++;
 					}
-					queueP.enQueue((iNode<Client>) c, time );
-					
-					
+					Node<Client> cb = new Node<Client>(c);
+					queueP.enQueue(cb, time );
 					
 				}
 			}
@@ -111,6 +111,38 @@ public class Library {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	
+	public void probar(){
+		QueuePriority<Client> qP = new QueuePriority<>();
+		
+		Client cl = new Client(121);
+		Node<Client> n = new Node<Client>(cl);
+		
+		Client cl1 = new Client(122);
+		Node<Client> n2 = new Node<Client>(cl1);
+		
+		Client cl2 = new Client(123);
+		Node<Client> n3 = new Node<Client>(cl2);
+		
+		Client cl3 = new Client(124);
+		Node<Client> n4 = new Node<Client>(cl3);
+
+		Client cl4 = new Client(125);
+		Node<Client> n5 = new Node<Client>(cl4);
+		
+		qP.enQueue(n, 5);
+		qP.enQueue(n2, 4);
+		qP.enQueue(n3, 3);
+		qP.enQueue(n4, 2);
+		qP.enQueue(n5, 1);
+	
+		System.out.println("Clientes: ");
+		while(!qP.isEmpty()){
+			System.out.println(qP.deQueue().getData().getIdClient());
+		}
+		
 	}
 
 }

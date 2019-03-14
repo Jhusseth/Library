@@ -26,6 +26,7 @@ public class Main extends Application {
 	public static void main(String[] args) {
 		//launch(args);
 		lb = new Library();
-		lb.solve();
+//		lb.solve();
+		lb.probar();
 	}
 }

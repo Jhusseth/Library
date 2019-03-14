@@ -1,10 +1,10 @@
 package PriorityQueue;
 
-import Node.iNode;
+import Node.Node;
 
-public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
+public class QueuePriority<T> implements IPriority_Queue<Node<T>> {
 
-	private iNode<T> queue;
+	private Node<T> queue;
 	private int size;
 	private int priority;
 	
@@ -34,8 +34,8 @@ public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 	}
 
 	@Override
-	public void enQueue(iNode<T> o, long priority) {
-		iNode<T> newC = null;
+	public void enQueue(Node<T> o, long priority) {
+		Node<T> newC = null;
 		
 		boolean found =false;
 		while((newC!=null)&&!found){
@@ -43,7 +43,7 @@ public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 				found=true;
 			}
 			else{
-				newC=queue.getNext();
+				newC=(Node<T>) queue.getNext();
 			}
 		}
 	}
@@ -57,30 +57,30 @@ public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 	}
 
 	@Override
-	public iNode<T> deQueue() {
+	public Node<T> deQueue() {
 		if(queue == null){
 			return null;
 		}
-		iNode<T> ax = queue;
-		queue = queue.getNext();
+		Node<T> ax = queue;
+		queue = (Node<T>) queue.getNext();
 		size--;
 		return ax;
 	}
 
 	@Override
-	public iNode<T> getFirst() {
+	public Node<T> getFirst() {
 		return queue;
 	}
 
 	@Override
-	public iNode<T> search(iNode<T> o) {
-		iNode<T> p = null;
+	public Node<T> search(Node<T> o) {
+		Node<T> p = null;
 		if(queue.getData()==o) {
 			p=queue;
 		}
 		else {
 			while(queue.getNext()!=null) {
-				queue=queue.getNext();
+				queue=(Node<T>) queue.getNext();
 			if(queue.getData()==o) {
 				p=queue;
 			}
@@ -90,21 +90,21 @@ public class QueuePriority<T> implements IPriority_Queue<iNode<T>> {
 		return p;
 	}
 
-	public void setFirst(iNode<T> first) {
+	public void setFirst(Node<T> first) {
 		this.queue = first;
 	}
 
 
 	@Override
-	public boolean remove(iNode<T> o) {
+	public boolean remove(Node<T> o) {
 		boolean e =false;
-		iNode<T> p = null;
+		Node<T> p = null;
 		if(queue.getData()==o) {
 			p=queue;
 		}
 		else {
 			while(queue.getNext()!=null) {
-				queue=queue.getNext();
+				queue=(Node<T>) queue.getNext();
 			if(queue.getData()==o) {
 				p=queue;
 			}
