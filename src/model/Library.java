@@ -8,10 +8,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 import List.List;
+import Node.Node;
 import Node.iNode;
 import PriorityQueue.QueuePriority;
+import Queue.IQueue;
 import Queue.Queue;
 import Stack.Stack;
 
@@ -56,17 +59,20 @@ public class Library {
 			
 			List<Stand> listS = new List<Stand>();
 			
+			PriorityQueue<Client> qP = new PriorityQueue<>();
+			
 			for(int i =0;i<cases;i++){
 				int cashier = Integer.parseInt(br.readLine());
 				int stands = Integer.parseInt(br.readLine());
 				Queue<Book> queue = new Queue<Book>();
-				for(int j =0;i<stands;j++){	
+				for(int j =0;j<stands;j++){	
 					String[] hashT = br.readLine().split(" ");		
 					char referent = hashT[0].charAt(0);	
 					int size = Integer.parseInt(hashT[1]);
 					
 					Stand aux = new Stand(referent,size);
-					listS.add((iNode<Stand>) aux);
+					Node<Stand> as = new Node<Stand>(aux);
+					listS.add(as);
 					
 					ISBN cb = new ISBN(0);
 					for(int k =0;k<size;k++){			
@@ -76,8 +82,12 @@ public class Library {
 						int value = Integer.parseInt(books[1]);		
 						int cant = Integer.parseInt(books[2]);
 						
-						Book b = new Book(value,cant);
-						queue.enQueue((iNode<Book>) b);
+						Book b = new Book(nIsbn);
+						b.setCant(cant);
+						b.setValue(value);
+						Node<Book> bs = new Node<Book>(b);
+						
+						queue.enQueue(bs);
 					}
 					
 					aux.getHastable().put(cb, queue);
@@ -90,19 +100,19 @@ public class Library {
 					
 					Client c = new Client(code);
 					
-					QueuePriority<Client> queueP = new QueuePriority<>();
-					
-					int time =0;
 					for(int x =1;x<client.length;x++){		
 						int isbn = Integer.parseInt(client[i]);
-						ISBN bI = new ISBN(isbn);
-						c.getStackBooks().push((iNode<ISBN>) bI);
-						time++;
+						Book nb = new Book(isbn);
+						c.shop(nb);
 					}
-					queueP.enQueue((iNode<Client>) c, time );
 					
+					qP.offer(c);
 					
-					
+				}
+				
+				System.out.println("Clientes: ");
+				while(!qP.isEmpty()){
+					System.out.println(qP.poll().getIdClient());
 				}
 			}
 			br.close();

@@ -1,16 +1,20 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 import QueueP.QueueEmptyException;
 import QueueP.QueueP;
-import java.util.LinkedList;
+
+import java.util.Queue;
 
 import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.LinkedList;
+
 
 class QueueTest {
 	
