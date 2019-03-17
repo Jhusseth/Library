@@ -3,16 +3,25 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientsInController">
    <children>
-      <TextArea fx:id="area" layoutX="38.0" layoutY="63.0" prefHeight="398.0" prefWidth="524.0" />
-      <Button layoutX="203.0" layoutY="474.0" mnemonicParsing="false" onAction="#launchClients" text="continue whit the in clients" />
-      <Label layoutX="230.0" layoutY="22.0" prefHeight="30.0" prefWidth="141.0" text="Clients In">
+      <ImageView fitHeight="610.0" fitWidth="619.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../pictures/17656748.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dadada" height="468.0" layoutX="25.0" layoutY="35.0" opacity="0.73" stroke="BLACK" strokeType="INSIDE" width="552.0" />
+      <TextArea fx:id="area" layoutX="62.0" layoutY="85.0" prefHeight="362.0" prefWidth="478.0" />
+      <Button layoutX="210.0" layoutY="454.0" mnemonicParsing="false" onAction="#launchClients" prefHeight="40.0" prefWidth="181.0" style="-fx-background-color: A3BD3E;" text="CONTINUE" />
+      <Label layoutX="62.0" layoutY="52.0" prefHeight="30.0" prefWidth="141.0" text="CLIENTS IN">
          <font>
-            <Font size="24.0" />
+            <Font name="HP Simplified Bold" size="24.0" />
          </font>
       </Label>
    </children>
