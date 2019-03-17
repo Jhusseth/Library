@@ -11,24 +11,19 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.controllerBill">
    <children>
-      <Text layoutX="50.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client 1">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="624.0" fitWidth="672.0" layoutX="-14.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="612.0" fitWidth="722.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../pictures/17656748.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="465.0" layoutX="21.0" layoutY="30.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" width="554.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="470.0" layoutX="51.0" layoutY="30.0" opacity="0.97" stroke="BLACK" strokeType="INSIDE" width="502.0" />
       <Text layoutX="61.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BILL" wrappingWidth="68.51904296875">
          <font>
             <Font name="HP Simplified" size="28.0" />
          </font>
       </Text>
       <TextArea fx:id="textArea" layoutX="61.0" layoutY="76.0" prefHeight="356.0" prefWidth="478.0" />
-      <Button fx:id="moreTestButton" layoutX="382.0" layoutY="446.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="146.0" style="-fx-background-color: A3BD3E;" text="MORE TEST">
+      <Button fx:id="moreTestButton" layoutX="220.0" layoutY="439.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="173.0" style="-fx-background-color: A3BD3E;" text="MORE TEST">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

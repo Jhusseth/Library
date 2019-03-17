@@ -13,6 +13,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import model.Library;
+import structures.QueueEmptyException;
+import structures.StackEmptyException;
 
 public class controllerBill implements Initializable {
 	
@@ -21,13 +24,18 @@ public class controllerBill implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
+		try {
+			textArea.setText(Library.getInstance().recorders());
+		} catch (QueueEmptyException e) {
+			e.printStackTrace();
+		} catch (StackEmptyException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void again(ActionEvent e) throws IOException {
 		Stage primaryStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource("libraryCaliMain.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/application/libraryCaliMain.fxml"));
 		Scene scene = new Scene(root,600,514);
 		primaryStage.setScene(scene);
 	}

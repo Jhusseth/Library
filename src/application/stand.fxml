@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="385.0" fitWidth="235.0" layoutX="364.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../pictures/pngtree-bookshelf-vector-material-png-clipart_2409955.jpg" />
+            <Image url="@pngtree-bookshelf-vector-material-png-clipart_2409955.jpg" />
          </image>
       </ImageView>
       <Text layoutX="258.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN: 331 $ 17.000 " wrappingWidth="84.994140625">

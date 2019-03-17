@@ -55,15 +55,17 @@ public class Client implements Comparable<Client>{
     
     public String toString() {
     	 String libros = "\n";
-    	 int size = purchased.getLong();
     	 if(purchased != null) {
-    		 for (int i = 0; i < size; i++) {
-				libros += purchased.poll();
-			}
+             int size = purchased.getLong();
+    		 for (int i = 0; i < size-1; i++) {
+				libros += purchased.poll() + ",";
+			 }
+    		 libros += purchased.poll();
     	 }else {
-    		for (int i = 0; i < ISBNs.size(); i++) {
-				libros += ISBNs.get(i);
+    		for (int i = 0; i < ISBNs.size() - 1; i++) {
+				libros += ISBNs.get(i) + ",";
 			}
+             libros += ISBNs.get(ISBNs.size() - 1);
     	 }
 		return "CLient N."+pos+"("+ id +")"+ (purchased!=null?" "+soldValue:"") +": " + libros;
     	
@@ -94,3 +96,4 @@ public class Client implements Comparable<Client>{
         this.purchased = purchased;
     }
 }
+

@@ -36,6 +36,7 @@ public class HashTable<K, T> implements IHashTable<K, T> {
 			for (int i = 0; i < slot.size(); i++) {
 				if (slot.get(i).getKey().equals(key)){
 					slot.remove(i);
+					numberOfElements--;
 				}
 			}
 			array[hash(key)].add(new HashNode<T, K>(value, key));
