@@ -1,8 +1,5 @@
-package StackP;
+package structures;
 import java.util.Collection;
-
-import Node.Node;
-import Node.iNode;
 
 public class StackP<T> implements iStackP<T> {
 

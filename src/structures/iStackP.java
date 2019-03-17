@@ -1,4 +1,4 @@
-package StackP;
+package structures;
 
 public interface iStackP<T> {
 

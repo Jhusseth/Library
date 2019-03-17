@@ -9,7 +9,7 @@
 //	
 //
 //}
-package HashTable;
+package structures;
 
 public interface IHashTable<K,V> {
 	

@@ -1,5 +1,9 @@
 package application;
 
+import java.io.IOException;
+
+import javax.swing.JFileChooser;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +11,8 @@ import javafx.scene.Scene;
 
 import javafx.stage.Stage;
 import model.Library;
+import structures.QueueEmptyException;
+import structures.StackEmptyException;
 
 public class Main extends Application {
 	private static Library lb;
@@ -23,9 +29,10 @@ public class Main extends Application {
 		}
 	}
 	
-	public static void main(String[] args) {
-		//launch(args);
-		lb = new Library();
-		lb.solve();
-	}
+	 public static void main(String ...args) throws IOException, QueueEmptyException, StackEmptyException {
+	        JFileChooser j = new JFileChooser();
+	        j.showOpenDialog(null);
+	        new Library().loadTestCase(j.getSelectedFile());
+	    }
+
 }

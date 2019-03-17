@@ -7,7 +7,7 @@ import static org.junit.Assert.fail;
 
 import org.junit.jupiter.api.Test;
 
-import HashTable.HashTable;
+import structures.HashTable;
 
 
 class HashTest {

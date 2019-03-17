@@ -1,5 +1,4 @@
-
-package HashTable ;
+package structures ;
 
 import java.util.ArrayList;
 import java.util.List;

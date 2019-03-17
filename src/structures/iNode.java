@@ -1,4 +1,4 @@
-package Node;
+package structures;
 
 public interface iNode<T> {
 	

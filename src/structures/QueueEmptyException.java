@@ -1,4 +1,4 @@
-package QueueP;
+package structures;
 
 public class QueueEmptyException extends Exception{
 	QueueEmptyException(String message){

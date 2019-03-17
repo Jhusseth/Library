@@ -1,4 +1,4 @@
-package Node;
+package structures;
 
 public class Node<T> implements iNode<T> {
 	

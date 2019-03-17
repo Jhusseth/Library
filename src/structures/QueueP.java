@@ -1,9 +1,7 @@
-package QueueP;
+package structures;
 
 import java.util.Collection;
-
-import Node.Node;
-import Node.iNode;
+import java.util.Iterator;
 
 public class QueueP<T> implements iQueueP<T> {
 
@@ -11,7 +9,7 @@ public class QueueP<T> implements iQueueP<T> {
 	private iNode<T> back;
 	private iNode<T> front;
 
-	public QueueP(T data) {
+	public QueueP() {
 		size = 0;
 		back = null;
 		front = null;
@@ -104,7 +102,6 @@ public class QueueP<T> implements iQueueP<T> {
 		}
 		size++;
 	}
-
 
 
 

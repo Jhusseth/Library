@@ -1,7 +1,7 @@
 package test;
 
-import QueueP.QueueEmptyException;
-import QueueP.QueueP;
+import structures.QueueEmptyException;
+import structures.QueueP;
 
 import java.util.Queue;
 
@@ -21,7 +21,7 @@ class QueueTest {
 	QueueP<Integer> q1;
 	
 	void setUp1() {
-		q1 = new QueueP<Integer>(0);
+		q1 = new QueueP<Integer>();
 	}
 
 	@Test

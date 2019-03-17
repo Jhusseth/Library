@@ -1,8 +1,8 @@
 package test;
 
 
-import StackP.StackEmptyException;
-import StackP.StackP;
+import structures.StackEmptyException;
+import structures.StackP;
 
 import java.util.EmptyStackException;
 
@@ -14,10 +14,7 @@ import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import StackP.StackP;
-
-
-
+import structures.StackP;
 
 class StackTest {
 	

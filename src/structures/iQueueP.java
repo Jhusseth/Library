@@ -1,6 +1,4 @@
-package QueueP;
-
-import QueueP.QueueEmptyException;
+package structures;
 
 public interface iQueueP<T>{
 	int getLong();

@@ -1,4 +1,4 @@
-package HashTable;
+package structures;
 
 public class HashNode<T, K> {
 
